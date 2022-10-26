@@ -1,0 +1,112 @@
+﻿<Window x:Class="Shirov.Lopushok.Presentation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Shirov.Lopushok.Presentation"
+        xmlns:vm="clr-namespace:Shirov.Lopushok.Presentation.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize">
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height="0.13*"/>
+            <RowDefinition/>
+            <RowDefinition
+                Height="0.07*"/>
+        </Grid.RowDefinitions>
+        <Grid
+            Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBox
+                Grid.Column="0"
+                Margin="10,4,6,4"/>
+            <ComboBox
+                Grid.Column="1"
+                Margin="6,4,6,4"/>
+            <ComboBox
+                Grid.Column="2"
+                Margin="6,4,8,4"/>
+        </Grid>
+        <ListView
+            Grid.Row="1"
+            HorizontalAlignment="Center"
+            ScrollViewer.VerticalScrollBarVisibility="Hidden"
+            x:Name="ItemsList"
+            BorderBrush="White"
+            ItemsSource="{Binding Product}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border
+                        Background="{StaticResource ColorSecondary}"
+                        BorderBrush="{StaticResource ColorAccent}"
+                        BorderThickness="1">
+                        <Grid
+                            Height="77"
+                            Width="765">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition
+                                    Width="0.25*"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition
+                                    Width="0.1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image
+                                Grid.Column="0"
+                                Margin="0,3,0,3"
+                                Source="{Binding Image}"/>
+                            <Grid
+                                Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid
+                                    Grid.Row="0">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition
+                                                Width="0.3*"/>
+                                            <ColumnDefinition
+                                                Width="0.04*"/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock
+                                            Grid.Column="0"
+                                            Text="{Binding ProductType}"/>
+                                        <TextBlock
+                                            Grid.Column="1"
+                                            Text="|"/>
+                                        <TextBlock
+                                            Grid.Column="2"
+                                            Text="{Binding Title}"
+                                            HorizontalAlignment="Left"/>
+                                    </Grid>
+                                </Grid>
+                                <TextBlock
+                                    Grid.Row="1"
+                                    Text="{Binding ArticleNumber}"/>
+                                <TextBlock
+                                    Grid.Row="2"
+                                    Text="{Binding ProductMaterials}"/>
+                            </Grid>
+                            <TextBlock
+                                Grid.Column="2"
+                                HorizontalAlignment="Right"
+                                Margin="0,0,4,0"
+                                Text="{Binding MinCostForAgent}"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Window>
