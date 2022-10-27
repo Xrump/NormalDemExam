@@ -12,7 +12,7 @@ namespace Shirov.Lopushok.Domain.Entities
 
         public int Id { get; set; }
         public string Title { get; set; } = null!;
-        public double? DefectedPercent { get; set; }
+        public double DefectedPercent { get; set; }
 
         public virtual ICollection<Product> Products { get; set; }
     }

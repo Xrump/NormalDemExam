@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gX689TvMeTCj1rWSWvQYwUCD6NPR/UjKAsAWEjnME2mDGeS/EQjA6HJPwSicdp0LIfzxP/1kRasCtXpv0Vqgvw==",
+  "dgSpecHash": "mv+a3cRJ1cwG58px/rfmNO9HcAmY+GueovQFm2i5iUFOsXf8VhLCm7KzSX3Pqii3i1PNMt8n/crZdHCGnlZnyg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\student\\Documents\\ISP19K\\Shirov.Lopushok\\Shirov.Lopushok\\Shirov.Lopushok.csproj",
+  "projectFilePath": "C:\\Users\\student\\Desktop\\Shirov\\NormalDemExam\\Shirov.Lopushok\\Shirov.Lopushok.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\student\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\student\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
