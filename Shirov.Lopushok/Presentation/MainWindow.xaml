@@ -27,13 +27,36 @@
             </Grid.ColumnDefinitions>
             <TextBox
                 Grid.Column="0"
-                Margin="10,4,6,4"/>
+                Margin="10,4,6,4"
+                x:Name="SearchTextBox"
+                TextChanged="SearchTextBox_TextChanged"/>
             <ComboBox
                 Grid.Column="1"
-                Margin="6,4,6,4"/>
+                Margin="6,4,6,4"
+                x:Name="SortComboBox"
+                SelectionChanged="SortComboBox_SelectionChanged">
+                <ComboBoxItem
+                    Content="Отменить сортировку"/>
+                <ComboBoxItem
+                    Content="В алфавитном порядке"/>
+                <ComboBoxItem
+                    Content="В обратном алфавитном порядке"/>
+                <ComboBoxItem
+                    Content="По возрастанию номера производственного цеха"/>
+                <ComboBoxItem
+                    Content="По убыванию номера производственного цеха"/>
+                <ComboBoxItem
+                    Content="По возрастанию стоимости">
+                </ComboBoxItem>
+                <ComboBoxItem
+                    Content="По убыванию стоимости"/>
+            </ComboBox>
             <ComboBox
                 Grid.Column="2"
-                Margin="6,4,8,4"/>
+                Margin="6,4,8,4"
+                ItemsSource="{Binding ProductTypes}"
+                x:Name="FilterComboBox"
+                SelectionChanged="FilterComboBox_SelectionChanged"/>
         </Grid>
         <ListView
             Grid.Row="1"
@@ -42,6 +65,14 @@
             x:Name="ItemsList"
             BorderBrush="White"
             ItemsSource="{Binding Product}">
+            <ListView.ItemContainerStyle>
+                <Style
+                    TargetType="ListViewItem">
+                    <Setter
+                        Property="Margin"
+                        Value="0,3,0,3"/>
+                </Style>
+            </ListView.ItemContainerStyle>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border
@@ -49,24 +80,26 @@
                         BorderBrush="{StaticResource ColorAccent}"
                         BorderThickness="1">
                         <Grid
-                            Height="77"
+                            Height="72"
                             Width="765">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition
-                                    Width="0.25*"/>
+                                    Width="0.19*"/>
                                 <ColumnDefinition/>
                                 <ColumnDefinition
-                                    Width="0.1*"/>
+                                    Width="0.12*"/>
                             </Grid.ColumnDefinitions>
                             <Image
                                 Grid.Column="0"
-                                Margin="0,3,0,3"
+                                Margin="4,3,4,3"
                                 Source="{Binding Image}"/>
                             <Grid
                                 Grid.Column="1">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
+                                    <RowDefinition
+                                        Height="0.7*"/>
+                                    <RowDefinition
+                                        Height="0.7*"/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
                                 <Grid
@@ -74,14 +107,14 @@
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition
-                                                Width="0.3*"/>
+                                                Width="0.2*"/>
                                             <ColumnDefinition
-                                                Width="0.04*"/>
+                                                Width="0.05*"/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
                                         <TextBlock
                                             Grid.Column="0"
-                                            Text="{Binding ProductType}"/>
+                                            Text="{Binding ProductType.Title}"/>
                                         <TextBlock
                                             Grid.Column="1"
                                             Text="|"/>
@@ -96,7 +129,8 @@
                                     Text="{Binding ArticleNumber}"/>
                                 <TextBlock
                                     Grid.Row="2"
-                                    Text="{Binding ProductMaterials}"/>
+                                    Text="{Binding Materials}"
+                                    TextWrapping="WrapWithOverflow"/>
                             </Grid>
                             <TextBlock
                                 Grid.Column="2"
@@ -108,5 +142,16 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+            <ItemsControl ItemsSource="{Binding ButtonsPanel,UpdateSourceTrigger=PropertyChanged   }"
+                          Grid.Row="2"
+                          HorizontalAlignment="Right"
+                          Margin="0,0,5,5">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"
+                                    x:Name="ButtonsStackPanel"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
     </Grid>
 </Window>
