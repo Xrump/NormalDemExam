@@ -53,3 +53,5 @@ C:\Users\student\Documents\ISP19K\Shirov.Lopushok\Shirov.Lopushok\bin\Debug\net6
 C:\Users\student\Documents\ISP19K\Shirov.Lopushok\Shirov.Lopushok\obj\Debug\net6.0-windows\Shirov.Lopushok.csproj.CopyComplete
 C:\Users\student\Documents\ISP19K\Shirov.Lopushok\Shirov.Lopushok\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\student\Documents\ISP19K\Shirov.Lopushok\Shirov.Lopushok\obj\Debug\net6.0-windows\App.baml
+C:\Users\student\Documents\ISP19K\Shirov.Lopushok\Shirov.Lopushok\obj\Debug\net6.0-windows\Presentation\RedactWindow.g.cs
+C:\Users\student\Documents\ISP19K\Shirov.Lopushok\Shirov.Lopushok\obj\Debug\net6.0-windows\Presentation\RedactWindow.baml

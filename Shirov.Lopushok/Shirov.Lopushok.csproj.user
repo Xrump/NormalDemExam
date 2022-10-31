@@ -10,9 +10,15 @@
     <Compile Update="Presentation\MainWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Presentation\RedactWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Presentation\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Presentation\RedactWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
